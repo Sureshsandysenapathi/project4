@@ -1,0 +1,51 @@
+<h1>{{name}} </h1>
+<h2>{{reg}}</h2>
+<h2>{{domain}}</h2>
+<p [class]="isheadingtag?'heading':'navbar'">navbar works!</p>
+<p [style]="{color:mycolor}">style binding </p>
+<p [style]=mystyle>object styke binding</p>
+<hr>
+<h1>Login Form</h1>
+userName:<input type="text" (input)="userName($event)"><br/>
+password:<input type="password"><br/>
+<input type="submit">
+<h1>{{this.name}}</h1>
+<h1>two way binding </h1>
+userName:<input type="text" [(ngModel)]="myName">
+<button (click)="nameChange($event)">change Name</button>
+<h1>{{myName}}</h1>
+<h1>{{mycount}}</h1>
+<button (click)="increment()">+</button>
+<button (click)="decrement()">-</button>
+<h1>ng s -o</h1>
+@if(a>b){
+    {{a}}is greater than {{b}}
+}
+@else {
+    {{a}}is less than {{b}}
+}
+<h1>angular.dev</h1>
+<hr>
+
+@for(item of items;track item.name){
+    <table border="1">
+        <tr>
+    <td>name : {{item.name}} regno : {{item.regno}}</td>
+    </tr>
+    </table>
+}@empty{
+<li>there is no items</li>
+}
+
+<hr>
+@switch (condition){
+    @case ('1'){
+        <h1>sunday</h1>
+    }
+    @case('2'){
+        <h1>monday</h1>
+    }
+    @case('3'){
+        <h1>tuseday</h1>
+    }
+}
